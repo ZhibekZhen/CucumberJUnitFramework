@@ -16,7 +16,7 @@ public class Driver {
    WebDriver driver = new ChromeDriver();
    WebDriver driver = Driver.getDriver()
     */
-    static WebDriver driver;
+    public static WebDriver driver;
 
     public static WebDriver getDriver(){
 
@@ -67,5 +67,8 @@ public class Driver {
 
         return driver;
     }
-}
+
+    }
+
+
 

@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class BaseUI {
-    public void waitAndClick(WebElement element){
+    public static void waitAndClick(WebElement element){
         waitUntilClickable(20, element);
         element.click();
     }
@@ -31,11 +31,11 @@ public class BaseUI {
         js.executeScript("arguments[0].value=arguments[1];", element, value);
     }
 
-    public WebDriverWait explicitWait(int seconds){
+    public static WebDriverWait explicitWait(int seconds){
         return new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(seconds));
     }
 
-    public void waitUntilClickable(int seconds, WebElement element){
+    public static void waitUntilClickable(int seconds, WebElement element){
         new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(seconds))
                 .until(ExpectedConditions.elementToBeClickable(element));
     }

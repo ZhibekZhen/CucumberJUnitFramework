@@ -7,10 +7,14 @@ import utils.Driver;
 
 public class LoginPage {
 
+    public WebElement passwordInput;
+    public WebElement loginInput;
+    public WebElement loginButton;
+
     public LoginPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-    @FindBy(id = "email")
+    @FindBy(xpath = "//input[@id='email']")
     public WebElement email;
 
     @FindBy(id = "password")
@@ -19,4 +23,6 @@ public class LoginPage {
     @FindBy(xpath = "//button[@data-testid='login-submit']")
     public WebElement signInButton;
 
+    public void login() {
+    }
 }
